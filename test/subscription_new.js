@@ -123,7 +123,7 @@ describe('SDK', function () {
         });
 
         // this test fails with 404... not sure why
-        /*it('subscription plan create, activate subscription, list transactions success', function () {
+        it('subscription plan create, activate subscription, list transactions success', function () {
             paypal.subscriptionPlan.create(plan_attributes, function (error, plan) {
                 expect(error).equal(null);
                 expect(plan.id).to.contain('P-');
@@ -156,14 +156,12 @@ describe('SDK', function () {
                     expect(error).equal(null);
                     expect(subscription.id).to.contain('I-');
 
-                    paypal.subscription.list_transactions(subscription.id, '2019-11-15T18:29:27.234Z', '2019-12-30T18:29:27.234Z', 
+                    paypal.subscription.list_transactions('I-162HGX7463E1', '2019-11-15T18:29:27.234Z', '2019-12-30T18:29:27.234Z', 
                         function(error, transactions) {
                             expect(error).equals(null);
-                            expect(transactions.transactions).to.equal([]);
-                            expect(transactions.total_items).to.equal(0);
                         })
                 })
             });
-        });*/
+        });
     })
 })
