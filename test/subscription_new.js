@@ -122,7 +122,6 @@ describe('SDK', function () {
             });
         });
 
-        // this test fails with 404... not sure why
         it('subscription plan create, activate subscription, list transactions success', function () {
             paypal.subscriptionPlan.create(plan_attributes, function (error, plan) {
                 expect(error).equal(null);
